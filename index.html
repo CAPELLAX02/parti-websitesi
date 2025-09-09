@@ -1,11 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parti Sitesi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parti Duyurusu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth; /* smooth scroll */
+    }
+    /* Parallax efekt */
+    .parallax {
+      background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80');
+      height: 70vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    /* Gradient overlay (alt kısım siyaha) */
+    .parallax::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9));
+    }
+  </style>
 </head>
-<body>
-    
+<body class="bg-black text-gray-100">
+
+  <section class="parallax flex items-center justify-center relative">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative text-center text-white z-10">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Mega Party 2025</h1>
+      <p class="text-lg md:text-xl mb-10">Geceyi bizimle yaşa! Eğlence, müzik, dans</p>
+      <a href="#ticket" class="animate-bounce inline-block">
+        <span class="material-symbols-outlined text-6xl hover:scale-110 transition-all duration-200">expand_circle_down</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="ticket" class="py-20 px-6 text-center bg-gradient-to-b from-black to-gray-900">
+    <div class="flex justify-center items-center mb-6">
+      <span class="material-symbols-outlined text-4xl mr-2">confirmation_number</span>
+      <h2 class="text-3xl font-bold">Biletini Hemen Al</h2>
+    </div>
+    <p class="mb-8 text-lg">Sınırlı sayıda bilet! Kaçırma.</p>
+    <a href="https://biletinial.com/tr-tr" target="_blank"
+       class="inline-flex border border-2 border-[#fbe31c] hover:border-white items-center px-8 py-3 bg-[#fbe31c] hover:bg-transparent hover:text-white rounded-lg shadow-lg text-xl text-black font-semibold transition transform hover:scale-105 hover:shadow-2xl">
+      <span class="material-symbols-outlined mr-2 font-semibold">shopping_cart</span>
+      Bilet Al
+    </a>
+  </section>
+
+  <section class="pt-16 pb-40 px-6 bg-white text-gray-800">
+    <div class="flex justify-center items-center mb-10">
+      <span class="material-symbols-outlined text-4xl mr-2">rule</span>
+      <h2 class="text-3xl font-bold">Etkinlik Kuralları</h2>
+    </div>
+    <div class="max-w-2xl mx-auto space-y-3 text-lg leading-relaxed">
+      <p class="flex flex-row items-center">
+        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
+        18 yaş altı katılım kabul edilmeyecektir.
+      </p>
+      <p class="flex flex-row items-center">
+        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
+              Organizasyon alanına dışarıdan yiyecek & içecek sokulamaz.
+      </p>
+      <p class="flex flex-row items-center">
+        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
+        Güvenlik görevlilerinin talimatlarına uymak zorunludur.
+      </p>
+      <p class="flex flex-row items-center">
+        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
+        Biletler iade edilmez, devredilemez.
+      </p>
+      <p class="flex flex-row items-center">
+        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
+        Unutulmaz bir gece için bolca enerji getir!
+      </p>
+    </div>
+  </section>
+
+  <footer class="py-12 bg-gray-900 text-center text-gray-400">
+    <p>Onur Yıldız © 2025</p>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollBtn = document.querySelector('a[href="#ticket"]');
+      const target = document.querySelector("#ticket");
+
+      scrollBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+
+
 </body>
 </html>
