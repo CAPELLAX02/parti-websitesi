@@ -82,8 +82,8 @@
         </a>
 
         <script>
-          // Test için 10 Eylül 2025, 20:40 Türkiye saati (UTC 17:40)
-          const targetDate = new Date("2025-09-10T17:40:00Z");
+          // Gerçek tarih: 11 Eylül 2025, 17:00 Türkiye saati (UTC 14:00)
+          const targetDate = new Date("2025-09-11T14:00:00Z");
 
           const ticketBtn = document.getElementById("ticketBtn");
 
@@ -104,8 +104,8 @@
 
           // İlk kontrol
           checkButtonStatus();
-          // Her 10 saniyede bir kontrol (test için daha hızlı)
-          setInterval(checkButtonStatus, 10000);
+          // Her dakika kontrol
+          setInterval(checkButtonStatus, 60000);
         </script>
         <!-- ZAMANA BAĞLI AKTİFLEŞEN BİLET BUTONU - KOD SONU -->
 
