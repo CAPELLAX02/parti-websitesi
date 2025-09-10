@@ -17,98 +17,122 @@
     }
     /* Parallax efekt */
     .parallax {
-      background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80');
-      height: 70vh;
+      background-image: url('image-wide.jpg');
+      height: 100vh;
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       position: relative;
     }
-    /* Gradient overlay (alt kısım siyaha) */
-    .parallax::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 40%;
-      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9));
+    @media (max-width: 900px) {
+    .parallax {
+      background-image: url('image.png');
+      background-size: cover;  /* mobilde tam ekran kaplasın */
+      background-attachment: scroll; /* performans için */
     }
+  }
   </style>
 </head>
 <body class="bg-black text-gray-100">
 
+  <!-- Header -->
+  <header id="mainHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/40 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex justify-center items-center">
+      <h1 class="text-xl md:text-2xl font-bold text-white transition-colors duration-300 text-center">
+        Büyük Üniversite Öğrencileri Buluşması 4
+      </h1>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
   <section class="parallax flex items-center justify-center relative">
     <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative text-center text-white z-10">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Mega Party 2025</h1>
-      <p class="text-lg md:text-xl mb-10">Geceyi bizimle yaşa! Eğlence, müzik, dans</p>
-      <a href="#ticket" class="animate-bounce inline-block">
-        <span class="material-symbols-outlined text-6xl hover:scale-110 transition-all duration-200">expand_circle_down</span>
+    <div class="relative text-center text-white z-10 w-full">
+      <!-- <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Milyon Performance Hall</h2>
+      <p class="text-lg md:text-xl mb-10">11 Ekim | Ankara</p> -->
+      <a href="#details" 
+         class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20 hover:bg-white/30 transition duration-200">
+        <span class="material-symbols-outlined text-4xl">expand_circle_down</span>
       </a>
     </div>
   </section>
 
-  <section id="ticket" class="py-20 px-6 text-center bg-gradient-to-b from-black to-gray-900">
-    <div class="flex justify-center items-center mb-6">
-      <span class="material-symbols-outlined text-4xl mr-2">confirmation_number</span>
-      <h2 class="text-3xl font-bold">Biletini Hemen Al</h2>
-    </div>
-    <p class="mb-8 text-lg">Sınırlı sayıda bilet! Kaçırma.</p>
-    <a href="https://biletinial.com/tr-tr" target="_blank"
-       class="inline-flex border border-2 border-[#fbe31c] hover:border-white items-center px-8 py-3 bg-[#fbe31c] hover:bg-transparent hover:text-white rounded-lg shadow-lg text-xl text-black font-semibold transition transform hover:scale-105 hover:shadow-2xl">
-      <span class="material-symbols-outlined mr-2 font-semibold">shopping_cart</span>
-      Bilet Al
-    </a>
-  </section>
-
-  <section class="pt-16 pb-40 px-6 bg-white text-gray-800">
+  <!-- Etkinlik Detayları -->
+  <section id="details" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
     <div class="flex justify-center items-center mb-10">
-      <span class="material-symbols-outlined text-4xl mr-2">rule</span>
-      <h2 class="text-3xl font-bold">Etkinlik Kuralları</h2>
+      <span class="material-symbols-outlined text-4xl mr-2">groups</span>
+      <h2 class="text-3xl font-bold">Üniversite Öğrencileri Buluşuyor!</h2>
     </div>
-    <div class="max-w-2xl mx-auto space-y-3 text-lg leading-relaxed">
-      <p class="flex flex-row items-center">
-        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
-        18 yaş altı katılım kabul edilmeyecektir.
-      </p>
-      <p class="flex flex-row items-center">
-        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
-              Organizasyon alanına dışarıdan yiyecek & içecek sokulamaz.
-      </p>
-      <p class="flex flex-row items-center">
-        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
-        Güvenlik görevlilerinin talimatlarına uymak zorunludur.
-      </p>
-      <p class="flex flex-row items-center">
-        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
-        Biletler iade edilmez, devredilemez.
-      </p>
-      <p class="flex flex-row items-center">
-        <span class="material-symbols-outlined text-2xl mr-2">arrow_circle_right</span>
-        Unutulmaz bir gece için bolca enerji getir!
-      </p>
+
+    <div class="max-w-3xl mx-auto text-lg space-y-6 leading-relaxed">
+      <p>Milyon Performance Hall’de 11 Ekim’de gerçekleştireceğimiz eğlenceli buluşmamıza sizi de davet etmekten mutluluk duyuyoruz!</p>
+
+      <p>Vodafone Freezone, Maximum Genç, Algida, Shweppes, Doritos, Kite, Gain, Porty, Arabica gibi önde gelen markaların desteklediği etkinliğimizde, üniversite öğrencileri olarak unutulmaz bir gece yaşayacağız. Tek mekanda 4 farklı sahneyle sizleri ağırlayacağımız etkinliğimiz, doyasıya eğlenmek için harika bir fırsat sunuyor. Sizlerin yoğun takvimi göz önünde bulundurularak düzenlenen bu gece de paydosu bu sefer sizler veriyorsunuz. Bu güzel gece de sadece eğlenmek ve sosyalleşmek var. 🥳💜</p>
+
+      <div class="bg-gray-800/70 p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4 flex items-center">
+          <span class="material-symbols-outlined text-3xl mr-2">event</span> Programımız
+        </h3>
+        <ul class="space-y-2">
+          <li>Kapı Açılışı: <strong>19:15</strong></li>
+          <li>Warm Stage: <strong>19.20 - 20.00</strong></li>
+          <li>Live Stage: <strong>20.00 - 22.00</strong></li>
+          <li>Commercial Stage: <strong>22.00 - 01.30</strong></li>
+          <li>After Stage: <strong>01.30 - ∞</strong></li>
+        </ul>
+      </div>
+
+      <p>Etkinliğimizin amacı, üniversiteli gençleri bir araya getirerek sosyalleşmelerini ve keyifli vakit geçirmelerini sağlamaktır. Bu etkinlikte mali bir amaç güdülmediğinden dolayı masrafların çıkması adına <strong>1.Faz bilet fiyatı 300₺</strong> olarak belirlenmiştir. Tamamen sosyal bir deneyim sunmayı hedeflemekteyiz 🥳</p>
+
+      <p>Hepinizi aramızda görmek için sabırsızlanıyoruz! 💜</p>
+
+      <div class="bg-red-600/70 p-6 rounded-lg shadow-lg text-md">
+        <p class="mb-2">⚠️ <strong>Önemli Notlar:</strong></p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Etkinliğe sadece Üniversite öğrencileri kimlikleri ile katılabilir. Yüksek lisans ve Doktora öğrencileri giriş yapabilir.</li>
+          <li>Etkinlik epilepsi hastalarına tavsiye edilmez.</li>
+          <li>Biletler temsilcilerimiz ve afişte logosu bulunan online satış sitelerinde!</li>
+        </ul>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="py-12 bg-gray-900 text-center text-gray-400">
     <p>Onur Yıldız © 2025</p>
   </footer>
 
-
+  <!-- Scroll Script -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const scrollBtn = document.querySelector('a[href="#ticket"]');
-      const target = document.querySelector("#ticket");
+    // Header scroll effect
+    document.addEventListener("scroll", () => {
+      const header = document.getElementById("mainHeader");
+      if (window.scrollY > 50) {
+        header.classList.remove("bg-black/40", "backdrop-blur-md");
+        header.classList.add("bg-white", "shadow-md");
+        header.querySelector("h1").classList.remove("text-white");
+        header.querySelector("h1").classList.add("text-gray-900");
+      } else {
+        header.classList.add("bg-black/40", "backdrop-blur-md");
+        header.classList.remove("bg-white", "shadow-md");
+        header.querySelector("h1").classList.add("text-white");
+        header.querySelector("h1").classList.remove("text-gray-900");
+      }
+    });
 
-      scrollBtn.addEventListener("click", (e) => {
+    // Smooth scroll for details link
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
       });
     });
   </script>
 
-
 </body>
+
+
 </html>
