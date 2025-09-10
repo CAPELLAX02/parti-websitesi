@@ -70,7 +70,7 @@
         </div>
         <p class="mb-6 text-base md:text-lg">Sınırlı sayıda bilet! Kaçırma.</p>
         <p class="mb-4 text-sm md:text-base text-gray-300">
-          Biletlerimiz <strong>11 Eylül 2025 Saat 17.00</strong> itibariyle satışa sunulacaktır.
+          Biletlerimiz <strong>11 Eylül 2025 Saat 19.00</strong> itibariyle satışa sunulacaktır.
         </p>
 
         <!-- ZAMANA BAĞLI AKTİFLEŞEN BİLET BUTONU -->
@@ -82,8 +82,8 @@
         </a>
 
         <script>
-          // Gerçek tarih: 11 Eylül 2025, 17:00 Türkiye saati (UTC 14:00)
-          const targetDate = new Date("2025-09-11T14:00:00Z");
+          // Gerçek tarih: 11 Eylül 2025, 19:00 Türkiye saati (UTC 16:00)
+          const targetDate = new Date("2025-09-11T16:00:00Z");
 
           const ticketBtn = document.getElementById("ticketBtn");
 
@@ -92,7 +92,7 @@
             if (now >= targetDate) {
               ticketBtn.style.pointerEvents = "auto";
               ticketBtn.style.opacity = "1";
-              ticketBtn.style.background = "#fbe31c";
+              ticketBtn.style.background = "#1ccb5c";
               ticketBtn.style.color = "black";
             } else {
               ticketBtn.style.pointerEvents = "none";
